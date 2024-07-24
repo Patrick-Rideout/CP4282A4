@@ -23,7 +23,7 @@ export default function HomeLayout() {
 async function initializeDB(db) {
   await db.execAsync('PRAGMA journal_mode = "wal";');
 
-  await db.execAsync('DROP TABLE IF EXISTS movies;');
+//  await db.execAsync('DROP TABLE IF EXISTS movies;');
 
   await db.execAsync(`
     CREATE TABLE IF NOT EXISTS movies (
