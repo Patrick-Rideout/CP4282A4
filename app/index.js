@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Movie from '../components/movie';
 import { MovieContext } from '../components/MovieContext';
 import { useSQLiteContext } from 'expo-sqlite';
-import Button from '../components/button';
+import { Button } from '@rneui/themed';
 
 export default function App() {
   const db = useSQLiteContext();
@@ -25,16 +25,10 @@ export default function App() {
 
   const goToNextHighestRanking = () => {
     const newIndex = currentIndex - 1;
-
     if (newIndex >= 0) {
-        setMovie(rankings[newIndex]);
-        setCurrentIndex(newIndex);
+      setMovie(rankings[newIndex]);
+      setCurrentIndex(newIndex);
     }
-
-//    if (rankings.length > 0) {
-//      setMovie(rankings[0]);
-//      setCurrentIndex(0);
-//    }
   };
 
   const goToNextLowestRanking = () => {
@@ -46,17 +40,27 @@ export default function App() {
   };
 
   if (movie == null) {
-    return (
-      <Text>Loading</Text>
-    );
+    return <Text>Loading</Text>;
   }
 
   return (
     <View style={styles.container}>
       <Movie movie={movie} />
       <View style={styles.buttonContainer}>
-        <Button label={"<"} onPress={goToNextHighestRanking} />
-        <Button label={">"} onPress={goToNextLowestRanking} />
+        <Button
+          title="<"
+          onPress={goToNextHighestRanking}
+          buttonStyle={styles.button}
+          containerStyle={styles.buttonContainerStyle}
+          titleStyle={styles.buttonTitle}
+        />
+        <Button
+          title=">"
+          onPress={goToNextLowestRanking}
+          buttonStyle={styles.button}
+          containerStyle={styles.buttonContainerStyle}
+          titleStyle={styles.buttonTitle}
+        />
       </View>
     </View>
   );
@@ -73,5 +77,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
-  }
+  },
+  buttonContainerStyle: {
+    width: 80,
+    marginHorizontal: 10,
+  },
+  button: {
+    backgroundColor: '#007bff',
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+  },
+  buttonTitle: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });

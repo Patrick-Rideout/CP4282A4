@@ -1,6 +1,5 @@
 import { Text, View, TextInput, StyleSheet } from 'react-native';
-import Button from '../components/button';
-import { MovieContext } from '../components/MovieContext';
+import { Button } from '@rneui/themed';
 import { useState } from 'react';
 import { useSQLiteContext } from 'expo-sqlite';
 
@@ -19,10 +18,13 @@ export default function AddMovie() {
       year: movieYear,
       actors: movieActors,
       imageUrl: movieImageUrl,
-      ranking: parseInt(movieRanking)
+      ranking: parseInt(movieRanking),
     };
 
-    await db.runAsync('INSERT INTO movies (name, year, actors, imageUrl, ranking) VALUES (?, ?, ?, ?, ?)', [movieName, movieYear, movieActors, movieImageUrl, parseInt(movieRanking)]);
+    await db.runAsync(
+      'INSERT INTO movies (name, year, actors, imageUrl, ranking) VALUES (?, ?, ?, ?, ?)',
+      [movieName, movieYear, movieActors, movieImageUrl, parseInt(movieRanking)]
+    );
 
     setMovieName('');
     setMovieYear('');
@@ -32,7 +34,7 @@ export default function AddMovie() {
   };
 
   return (
-    <>
+    <View style={styles.container}>
       <Text>Movie Name</Text>
       <TextInput
         style={styles.input}
@@ -65,19 +67,44 @@ export default function AddMovie() {
         keyboardType="numeric"
       />
       <Button
-        label={"Add Movie"}
+        title="Add Movie"
         onPress={addMovie}
+        buttonStyle={styles.button}
+        containerStyle={styles.buttonContainer}
+        titleStyle={styles.buttonTitle}
       />
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    alignItems: 'center',
+  },
   input: {
     height: 40,
-    width: 200,
-    margin: 12,
+    width: 250,
+    marginVertical: 10,
     borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
     padding: 10,
+    backgroundColor: '#f9f9f9',
+  },
+  buttonContainer: {
+    marginTop: 20,
+    width: 150,
+  },
+  button: {
+    backgroundColor: '#007bff',
+    borderRadius: 5,
+    paddingVertical: 10,
+  },
+  buttonTitle: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
