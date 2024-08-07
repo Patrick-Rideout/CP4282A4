@@ -66,16 +66,10 @@ Launch the App with Expo Go
 ## Screenshots
 
 ### Main Page
-![Main Page](https://github.com/UnusualFrog/FavoriteBirdsAppReact/blob/main/assets/screenshots/Mainpage.png)
-
-### Main Page Second Entry
-![Main Page 2](https://github.com/UnusualFrog/FavoriteBirdsAppReact/blob/main/assets/screenshots/Mainpage2.png)
+![Main Page](https://github.com/Patrick-Rideout/FavouriteMovieAppReact/blob/main/assets/screenshots/MainPage.jpg)
 
 ### Update Page
-![Update Page](https://github.com/UnusualFrog/FavoriteBirdsAppReact/blob/main/assets/screenshots/Updatepage.png)
+![Update Page](https://github.com/Patrick-Rideout/FavouriteMovieAppReact/blob/main/assets/screenshots/UpdatePage.jpg)
 
-### Add Bird Page
-![Add Bird](https://github.com/UnusualFrog/FavoriteBirdsAppReact/blob/main/assets/screenshots/Addpage.png)
-
-### Main Page
-![Add Bird Filled](https://github.com/UnusualFrog/FavoriteBirdsAppReact/blob/main/assets/screenshots/Addpage2
+### Add Movies Page
+![Add Bird](https://github.com/Patrick-Rideout/FavouriteMovieAppReact/blob/main/assets/screenshots/AddPage.jpg)
