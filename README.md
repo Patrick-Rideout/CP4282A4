@@ -55,6 +55,7 @@ Launch the App with Expo Go
   Press s │ switch to Expo Go
   Press a │ open Android
 ```
+
 ## Tech Stack
 
 - [React Native](https://reactnative.dev/) - Project Backend
@@ -71,5 +72,5 @@ Launch the App with Expo Go
 ### Update Page
 ![Update Page](https://github.com/Patrick-Rideout/FavouriteMovieAppReact/blob/main/assets/screenshots/UpdatePage.jpg)
 
-### Add Movies Page
+### Add Page
 ![Add Bird](https://github.com/Patrick-Rideout/FavouriteMovieAppReact/blob/main/assets/screenshots/AddPage.jpg)
