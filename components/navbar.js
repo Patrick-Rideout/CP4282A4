@@ -17,7 +17,7 @@ export default function NavBar() {
   return (
     <View style={styles.navbar}>
       <Button
-        title="Movie"
+        title="Movies"
         onPress={handleHome}
         buttonStyle={styles.button}
         containerStyle={styles.buttonContainer}
